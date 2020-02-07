@@ -3,7 +3,7 @@ import TodoItems from "./TodoItems";
 import fetch from "isomorphic-fetch";
 
 function App() {
-  //assim
+  //yep, it's working!
   const [items, setItems] = useState([]);
   const [currentItem, setCurrentItem] = useState("");
   const inputElement = useRef();
