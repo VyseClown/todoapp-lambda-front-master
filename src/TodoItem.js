@@ -1,4 +1,4 @@
-import React, { Component, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 
 function TodoItem({ item }) {
   const [editMode, setEditMode] = useState(false);
