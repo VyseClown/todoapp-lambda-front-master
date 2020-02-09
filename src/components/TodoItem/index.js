@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Container } from "./styles";
 import { MdEdit, MdUpdate, MdDelete } from "react-icons/md";
-import Board from "../Board";
 
 function TodoItem({ item }) {
   const [editMode, setEditMode] = useState(false);
