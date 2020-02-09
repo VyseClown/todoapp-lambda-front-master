@@ -6,7 +6,7 @@ function TodoItems({ entries, editItem, deleteItem }) {
     if (!Boolean(entries.length)) return null;
 
     return entries.map(item => {
-      console.log(item._id);
+      //console.log(item._id);
       return (
         <TodoItem
           key={item._id}

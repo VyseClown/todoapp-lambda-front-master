@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import TodoItems from "../TodoItems";
 import fetch from "isomorphic-fetch";
+import { MdAdd } from "react-icons/md";
 
 import { Container } from "./styles";
 
@@ -116,8 +117,11 @@ export default function Board() {
               ref={inputElement}
               value={currentItem}
               onChange={handleInput}
+              maxLength="11"
             />
-            <button onClick={addItem}>Add Task</button>
+            <button onClick={addItem}>
+              <MdAdd />
+            </button>
           </div>
         </div>
         <TodoItems

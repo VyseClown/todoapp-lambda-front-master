@@ -2,12 +2,13 @@ import React, { useState, useRef } from "react";
 import { Container } from "./styles";
 import { MdEdit, MdUpdate, MdDelete } from "react-icons/md";
 
-function TodoItem({ item }) {
+function TodoItem({ item, deleteItem, editItem }) {
   const [editMode, setEditMode] = useState(false);
   const inputElement = useRef();
 
   function toggleEdit(e) {
     e.preventDefault();
+
     setEditMode({ editMode: !editMode });
   }
 
@@ -27,13 +28,14 @@ function TodoItem({ item }) {
           <span>{item.title}</span>
         ) : (
           <input
+            maxLength="11"
             defaultValue={item.title}
             ref={inputElement}
-            onKeyUp={() => callUpdateAPI(e, e.target.value)}
+            onKeyUp={e => callUpdateAPI(e, e.target.value)}
           />
         )}
         {!editMode ? (
-          <button type="submit" onClick={() => toggleEdit()}>
+          <button type="submit" onClick={e => toggleEdit(e)}>
             <MdEdit />
           </button>
         ) : (
@@ -41,7 +43,7 @@ function TodoItem({ item }) {
             type="submit"
             onClick={() => {
               editItem(inputElement, item._id);
-              toggleEdit(e);
+              e => toggleEdit(e);
             }}
           >
             <MdUpdate />
