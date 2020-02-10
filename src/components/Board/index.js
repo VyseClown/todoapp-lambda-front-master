@@ -13,7 +13,7 @@ export default function Board() {
   useEffect(() => {
     async function loadTodos() {
       const response = await fetch(
-        "https://x4i6a4z39j.execute-api.us-east-1.amazonaws.com/dev/api/todos",
+        "https://8svnnrxmvk.execute-api.us-east-1.amazonaws.com/dev/api/todos",
         {
           headers: {
             accept: "application/json",
@@ -41,7 +41,7 @@ export default function Board() {
     const newItem = currentItem;
     if (newItem !== "") {
       const response = await fetch(
-        "https://x4i6a4z39j.execute-api.us-east-1.amazonaws.com/dev/api/todos",
+        "https://8svnnrxmvk.execute-api.us-east-1.amazonaws.com/dev/api/todos",
         {
           headers: {
             accept: "application/json",
@@ -60,9 +60,8 @@ export default function Board() {
   }
 
   async function editItem(title, id) {
-    console.log(title);
     const response = await fetch(
-      `https://x4i6a4z39j.execute-api.us-east-1.amazonaws.com/dev/api/todos/${id}`,
+      `https://8svnnrxmvk.execute-api.us-east-1.amazonaws.com/dev/api/todos/${id}`,
       {
         headers: {
           accept: "application/json",
@@ -92,7 +91,7 @@ export default function Board() {
       return item._id !== id;
     });
     const response = await fetch(
-      `https://x4i6a4z39j.execute-api.us-east-1.amazonaws.com/dev/api/todos/${id}`,
+      `https://8svnnrxmvk.execute-api.us-east-1.amazonaws.com/dev/api/todos/${id}`,
       {
         headers: {
           accept: "application/json",
