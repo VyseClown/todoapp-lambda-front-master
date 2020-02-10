@@ -64,9 +64,7 @@ export default function Board() {
       `https://8svnnrxmvk.execute-api.us-east-1.amazonaws.com/dev/api/todos/${id}`,
       {
         headers: {
-          accept: "application/json",
-          "Content-Type": "application/json",
-          "User-Agent": "todo"
+          "Content-Type": "application/json"
         },
         body: { title: title.title },
         method: "PUT"
