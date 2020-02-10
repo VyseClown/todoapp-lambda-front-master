@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { Container } from "./styles";
 import { MdEdit, MdUpdate, MdDelete } from "react-icons/md";
 
-function TodoItem({ item, deleteItem, editItem }) {
+function TodoItem({ item, editItem, deleteItem }) {
   const [editMode, setEditMode] = useState(false);
   const inputElement = useRef();
 

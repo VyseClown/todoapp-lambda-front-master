@@ -68,16 +68,16 @@ export default function Board() {
           "Content-Type": "application/json",
           "User-Agent": "todo"
         },
-        body: JSON.stringify({ title: title }),
+        body: { title: title.title },
         method: "PUT"
       }
     );
     const json = await response.json();
-    console.log(json);
+    //console.log(json);
     setItems(currentState => [
       ...currentState.map(item => {
         if (Boolean(item._id === json._id)) {
-          console.log("chegou");
+          //console.log("chegou");
           //item.title = json.title;
           return json;
         }
