@@ -7,7 +7,7 @@ function TodoItem({ item, editItem, deleteItem }) {
   const inputElement = useRef();
 
   function toggleEdit(e) {
-    //e.preventDefault();
+    e.preventDefault();
     console.log('entrou no toggle');
     setEditMode(!editMode);
   }
@@ -42,9 +42,9 @@ function TodoItem({ item, editItem, deleteItem }) {
         ) : (
           <button
             type="submit"
-            onClick={() => {
+            onClick={(e) => {
               editItem(inputElement, item._id);
-              e => toggleEdit(e);
+              toggleEdit(e);
             }}
           >
             <MdUpdate />
