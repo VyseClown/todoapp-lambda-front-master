@@ -7,9 +7,9 @@ function TodoItem({ item, editItem, deleteItem }) {
   const inputElement = useRef();
 
   function toggleEdit(e) {
-    e.preventDefault();
-
-    setEditMode({ editMode: !editMode });
+    //e.preventDefault();
+    console.log('entrou no toggle');
+    setEditMode(!editMode);
   }
 
   function callUpdateAPI(e, title) {
@@ -17,6 +17,7 @@ function TodoItem({ item, editItem, deleteItem }) {
     if (e.keyCode === 13) {
       editItem(inputElement, item._id);
       toggleEdit(e);
+      console.log('entrou no callUpdateAPI');
     }
   }
 
