@@ -15,7 +15,7 @@ function TodoItem({ item, editItem, deleteItem }) {
   function callUpdateAPI(e, title) {
     e.preventDefault();
     if (e.keyCode === 13) {
-      editItem(title, item._id);
+      editItem(inputElement, item._id);
       toggleEdit(e);
     }
   }
