@@ -60,7 +60,7 @@ export default function Board() {
   }
 
   async function editItem(title, id) {
-    console.log(title);
+    //console.log(title.current.value);
     const response = await fetch(
       `https://8svnnrxmvk.execute-api.us-east-1.amazonaws.com/dev/api/todos/${id}`,
       {
@@ -69,10 +69,11 @@ export default function Board() {
           "Content-Type": "application/json",
           "User-Agent": "todo"
         },
-        body: { ...title },
+        body: JSON.stringify({title:title.current.value}),
         method: "PUT"
       }
     );
+    console.log(response);
     const json = await response.json();
     //console.log(json);
     setItems(currentState => [
